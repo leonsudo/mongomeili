@@ -79,7 +79,7 @@ const createMeiliMongooseModel = function ({ index, attributesToIndex }) {
   
     // Update an existing document in Meili
     async updateObjectToMeili() {
-      const object = pick(this.toJSON(), attributesToIndex);
+      const object = _.pick(this.toJSON(), attributesToIndex);
       await index.updateDocuments([object]);
     }
   
